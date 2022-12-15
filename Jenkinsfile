@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('GitIntegration') {
+        stage('SCMPull') {
             steps {
                git branch: 'main', url: 'git@github.com:SakivV/pr-python-app.git'
             }
         }
-        stage('BuildPython') {
+        stage('RunPython') {
             steps {
                 sh 'python3 hello.py'
             }
